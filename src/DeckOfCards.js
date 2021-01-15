@@ -19,7 +19,8 @@ const DeckOfCards = () => {
             const res = await axios.get(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`);
             setDrawnCard(res.data.cards[0].image);
             console.log(res)
-
+            res.data.remaining === 0 && alert('Error: no cards remaining!');
+        
         }
         getCard();
     }
