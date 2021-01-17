@@ -1,8 +1,17 @@
 * {
     text-align: center;
 }
-button {
+
+body {
+    background-color: green;
+}
+#drawBtn {
     display: block;
     margin: 3% auto;
     
+}
+
+#message {
+    background-color: red;
+
 }
