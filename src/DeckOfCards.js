@@ -19,22 +19,28 @@ const DeckOfCards = () => {
         async function getCard() {
             const res = await axios.get(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`);
             setDrawnCard(res.data.cards[0].image);
+            console.log(res.data.remaining)
             if(res.data.remaining === 0) {
-                message.className = 'message'
-
-            } 
+                message.id= ''
+            } else {
+                message.id = 'message';
+            }
         
         }
         getCard();
+    }
+
+    const newGame = () => {
+        window.location.reload();
     }
 
     return (
         <div>
             <button id='drawBtn' onClick={drawCard}>GIMME A CARD!</button>
             <img src={drawnCard}/>
-            <div class='message' id='message'>
+            <div className='message' id='message'>
                 <h4>Error: no cards remaining!</h4>
-                <button id='restartBtn'>Restart</button>
+                <button onClick={newGame} id='restartBtn'>Restart</button>
             </div>
         </div>
 
