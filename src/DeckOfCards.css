@@ -12,6 +12,22 @@ body {
 }
 
 #message {
-    background-color: red;
+    display: none;
+    
+}
 
+#restartBtn {
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+.message {
+    background-color: red;
+    position: fixed;
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%);
+    width: 50%;
+    height: 50%;
 }
